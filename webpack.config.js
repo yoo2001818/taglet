@@ -18,7 +18,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: plugins,
-  target: 'atom',
+  /* target: 'atom', */
   module: {
     loaders: [
       {
@@ -36,11 +36,11 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        loader: 'css'
+        loader: 'style!css'
       },
       {
         test: /\.s[ca]ss$/i,
-        loader: 'css!sass'
+        loader: 'style!css!sass'
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,

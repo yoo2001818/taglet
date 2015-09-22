@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import configureStore from './store/index.js';
 import App from './views/App.js';
 
+document.title = 'Taglet';
+
 const store = configureStore();
 
 React.render(

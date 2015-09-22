@@ -1,0 +1,22 @@
+#images {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  &>.sidebar {
+    flex: 0 0 auto;
+    // This should be dynamically changeable
+    width: 12em;
+    box-sizing: border-box;
+    background-color: #666;
+    color: #fff;
+    box-shadow: 0 2px 2px #000;
+    padding: 0.4em;
+    z-index: 50;
+    position: relative;
+  }
+  &>.content {
+    flex: 1 1 auto;
+    padding: 0.4em;
+    background-color: #ddd;
+  }
+}

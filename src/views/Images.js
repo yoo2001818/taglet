@@ -1,8 +1,6 @@
-import './style/App.scss';
+import './style/Images.scss';
 
 import React, { Component } from 'react';
-import Header from '../components/Header.js';
-import Images from './Images.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -10,10 +8,12 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div id='app'>
-        <Header />
-        <div id='content'>
-          <Images />
+      <div id='images'>
+        <div className='sidebar'>
+          Sidebar
+        </div>
+        <div className='content'>
+          Content
         </div>
       </div>
     );
