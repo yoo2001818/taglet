@@ -1,2 +1,4 @@
-// This'd be enough for now
+// Support ES6.
+require('babel/register');
+
 require('./src/server.js');

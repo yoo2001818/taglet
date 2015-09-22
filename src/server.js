@@ -1,5 +1,6 @@
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var ipc = require('./net/ipc.js');
 
 // Report crashes to our server.
 require('crash-reporter').start();
@@ -26,9 +27,6 @@ app.on('ready', function() {
   // and load the index.html of the app.
   mainWindow.loadUrl(`file://${__dirname}/../dist/index.html`);
 
-  // Open the DevTools.
-  mainWindow.openDevTools();
-
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
     // Dereference the window object, usually you would store windows
@@ -36,4 +34,8 @@ app.on('ready', function() {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
+});
+
+ipc.on('ping', (data) => {
+  return Promise.resolve(data + ', Hello!');
 });
