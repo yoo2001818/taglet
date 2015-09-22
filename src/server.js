@@ -1,6 +1,5 @@
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
-var ipc = require('./net/ipc.js');
 
 // Report crashes to our server.
 require('crash-reporter').start();
@@ -34,8 +33,4 @@ app.on('ready', function() {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
-});
-
-ipc.on('ping', (data) => {
-  return Promise.resolve(data + ', Hello!');
 });
