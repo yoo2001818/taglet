@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
 
 var entries = './client.js';
 var plugins = [
@@ -35,12 +37,8 @@ module.exports = {
         loader: 'html'
       },
       {
-        test: /\.css$/i,
-        loader: 'style!css'
-      },
-      {
-        test: /\.s[ca]ss$/i,
-        loader: 'style!css!sass'
+        test: /\.s[ca]?ss$/i,
+        loader: 'style!css!postcss?parser=postcss-scss'
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -51,5 +49,8 @@ module.exports = {
         loader: 'file'
       }
     ]
+  },
+  postcss: function() {
+    return [autoprefixer, precss];
   }
 };
