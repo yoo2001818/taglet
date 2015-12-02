@@ -20,7 +20,6 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: plugins,
-  /* target: 'atom', */
   module: {
     loaders: [
       {
